@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block body %}
+<div class="my-post w-75 mx-auto" style="margin-top : 100px;">
+    <!-- ADMIN TASK OPTIONS -->
+    <div class="row align-items-center justify-content-around w-50 mx-auto">
+        <a href="/edit/0"><button class="btn btn-success p-3 "> Add a New Post</button></a>
+        <a href="/logout"><button class="btn btn-dark p-3   ">Logout</button></a>
+    </div>
+    <hr>
+    <!-- ADD ANY FILE  -->
+    <p class="text-muted text-small text-center">Upload a File</p>
+    <div class="w-50 mx-auto">
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+            <input type="file" name="file1" class="border border-secondary bg-light">
+            <button type="submit" class=" btn-secondary outline-none">Upload</button>
+        </form>
+    </div>
+
+    <!-- POST SECTION -->
+    <h1 class="m-3 ">My Post</h1>
+    <div class="post-table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">title</th>
+                    <th scope="col">date</th>
+                    <th scope="col">content</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <th scope="row">{{ post.sno }}</th>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.date }}</td>
+                    <td>{{ post.content[0:30] }}...</td>
+                    <td>
+                        <a href="/edit/{{post.sno}}"> <button class="btn btn-primary">Edit</button></a>
+                    </td>
+                    <td><a href="/delete/{{post.sno}}"><button class="btn btn-danger">Delete</button></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{
+    "params": {
+        "local_server": "True",
+        "local_uri": "mysql://root:@127.0.0.1/codingblog",
+        "prod_uri": "mysql://root:@127.0.0.1/codingblog",
+        "fb_url": "facebook.com/daniyaniazi",
+        "git_url": "https://github.com/daniyaniazi",
+        "tw_url": "twitter.com/daniyaniazi",
+        "blog_name": "Coding Blog",
+        "tag_line": "Code with Coffee",
+
+        "about_text": "Hi Fellow \n I am Computer Science Student from Ned University. I am a Web Developer | Machine Learing Enginner and  Python Dveloper. Currently i am Learning Flask , React and Deep learning :)",
+        "no_of_post": 3,
+        "admin_user": "daniyaniazi",
+        "admin_password": "flasklearn",
+        "upload_location": "C://Users/DANIA NIAZI//Desktop//GIT_PROJECTS"
+    }
+}

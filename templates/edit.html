@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block body %}
+<div class="conatiner w-75 mx-auto ">
+    <div style="margin-top : 100px;">
+        <div class="w-25 mx-auto">
+            <a href="/dashboard"><button class="btn btn-success p-3  "> Back to Dashboard</button></a>
+            <a href="/logout"><button class="btn btn-dark p-3  ">Logout</button></a>
+        </div>
+        <h1 style="margin-top : 100px;">
+            ADD/EDIT POST
+        </h1>
+        <!--EDIT FORM-->
+        <form name="editPost" id="editPost" novalidate action="/edit/{{post_sno}}" method="post">
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control" placeholder=Title id="title" value="{{post.title}}" required data-validation-required-message="Please enter your new title.">
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Slug</label>
+                    <input type="text" name="slug" value="{{post.slug}}" class="form-control" placeholder="slug" id="slug" required data-validation-required-message="Please enter your slug .">
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>ImgFile</label>
+                    <input type="text" name="img_file" value="{{post.img_file}}" class="form-control" placeholder="img_file" id="img_file" required data-validation-required-message="Please enter your img_file .">
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label for="content">Content</label>
+                    <textarea class="form-control" id="content" rows="6" required placeholder="Content" name="content" data-validation-required-message="Please enter your content.">{{post.content}}</textarea>
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <br>
+            <div id="success"> </div>
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Update</button>
+        </form>
+    </div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+
+{% endblock %}

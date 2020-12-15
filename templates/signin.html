@@ -1,0 +1,25 @@
+{% extends "layout.html" %} {% block body %}
+
+<div class="text-center mx-auto w-25" style="margin-top : 80px;">
+    <!-- ADMIN DASHBOARD -->
+    <form class="form-signin" action="/dashboard" method="post">
+        <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb7OX8-030FDWTdZsUsosI1W7mpolxXzogmw&usqp=CAU" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
+
+        <label for="uname" class="sr-only">Username</label>
+        <input type="text" id="uname" name="uname" class="form-control" placeholder="Username" required autofocus>
+        <div class="m-2"></div>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+            <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; {{params['blog_name']}} 2017-2018</p>
+    </form>
+    <!-- ADMIN DASHBOARD -->
+</div>
+
+{% endblock %}
